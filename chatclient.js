@@ -14,7 +14,12 @@ function connect() {
 
 
   connection.onerror = function(evt) {
-    console.log("ONOPEN onerror ");
+    console.log("onerror ");
+
+  };
+
+  connection.onclose = function(evt) {
+    console.log("onclose ");
 
   };
 
