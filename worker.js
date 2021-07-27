@@ -9,3 +9,8 @@ self.onmessage = function(e) {
         console.log("xyz");
     }
 };
+console.log('0')
+postMessage({message: 0});
+console.log('1')
+postMessage({message: 1});
+console.log('2')

@@ -1,6 +1,11 @@
 var worker = new Worker("worker.js");
-console.log('0')
-worker.postMessage({message: 0});
-console.log('1')
-worker.postMessage({message: 1});
-console.log('2')
+worker.onmessage = function(e) {
+    if (e.data.message == 0) {
+        for (var i = 0; i < 10000000; i++) {
+            cosine = Math.cos(Math.random());
+            if (i % 1000 == 0) console.log("hello world");
+        }
+    } else if (e.data.message == 1) {
+        console.log("xyz");
+    }
+};
